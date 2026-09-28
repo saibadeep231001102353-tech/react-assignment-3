@@ -1,0 +1,298 @@
+/* ==========================================================================
+   EmployeeCard Component Stylesheet - AgroFarm Hub
+   ========================================================================== */
+
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.employee-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-glow);
+  box-shadow: 0 16px 36px -6px rgba(16, 185, 129, 0.25);
+}
+
+/* Card Header */
+.card-top-banner {
+  padding: 1.5rem 1.5rem 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.avatar-and-names {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* Monogram Avatar (No Picture) */
+.emp-monogram-box {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform var(--transition-fast);
+}
+
+.employee-card:hover .emp-monogram-box {
+  transform: scale(1.05);
+}
+
+.emp-monogram-text {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.emp-identity-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.emp-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.emp-role-title {
+  font-size: 0.775rem;
+  color: var(--accent-emerald);
+  font-weight: 600;
+}
+
+/* Status Tag */
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-active {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.status-active .status-dot { background: #34d399; }
+
+.status-on-field {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+.status-on-field .status-dot { background: #fbbf24; }
+
+.status-on-leave {
+  background: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: var(--text-muted);
+}
+.status-on-leave .status-dot { background: var(--text-muted); }
+
+/* Details Body */
+.card-details-body {
+  padding: 0.5rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.emp-meta-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.emp-id-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-emerald);
+}
+
+[data-theme="light"] .emp-id-badge {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.emp-gender-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.item-icon {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.icon-emerald { color: var(--accent-emerald); }
+.icon-cyan { color: var(--accent-cyan); }
+.icon-amber { color: var(--accent-amber); }
+.icon-forest { color: #34d399; }
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.item-value {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.font-highlight {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.phone-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-family: var(--font-code);
+  font-weight: 500;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+}
+
+.address-item {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .address-item {
+  background: rgba(232, 245, 238, 0.5);
+}
+
+.address-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Card Actions Bar */
+.card-actions-bar {
+  padding: 0.85rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+
+[data-theme="light"] .card-actions-bar {
+  background: rgba(232, 245, 238, 0.6);
+}
+
+.card-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-view {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+.btn-view:hover {
+  background: var(--bg-card-hover);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.btn-edit {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-emerald);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+.btn-edit:hover {
+  background: var(--accent-emerald);
+  color: #fff;
+  border-color: transparent;
+}
+
+.btn-delete {
+  background: rgba(244, 63, 94, 0.12);
+  color: var(--accent-rose);
+  border-color: rgba(244, 63, 94, 0.3);
+}
+.btn-delete:hover {
+  background: var(--accent-rose);
+  color: #fff;
+  border-color: transparent;
+}
